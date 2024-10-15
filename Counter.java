@@ -37,11 +37,21 @@ counter.increment();
 
 }
 
+
+  Thread thread3 = new Thread(() -> {
+
+for (int i = 0; i < 10000; i++) {
+
+counter.increment();
+
+}
+
 });
 
 thread1.start();
 
 thread2.start();
+  thread3.start();
 
 System.out.println("Final Count: " + counter.getCount());
 
